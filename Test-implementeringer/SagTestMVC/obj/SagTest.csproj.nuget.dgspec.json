@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj": {}
+    "C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj": {
+    "C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj",
         "projectName": "SagTest",
-        "projectPath": "C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj",
-        "packagesPath": "C:\\Users\\Mads\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\SagTest.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mads\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
