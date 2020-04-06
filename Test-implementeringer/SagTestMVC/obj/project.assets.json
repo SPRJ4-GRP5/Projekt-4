@@ -8680,7 +8680,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Mads\\source\\repos\\SPRJ4-GRP5\\Projekt-4\\Test-implementeringer\\SagTestMVC\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\PC\\source\\repos\\projekt\\Projekt-4\\Test-implementeringer\\SagTestMVC\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
