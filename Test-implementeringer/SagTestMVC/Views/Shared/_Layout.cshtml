@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SagTest</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Studieven.dk</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,11 +24,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropbtn nav-link text-dark" asp-area="" asp-controller="Home" asp-action="OwnCases" >Own Cases</a>
-                            <div class="dropdown-content">
-                                <a href="#">Sag 1</a>
-                            </div>
+                        <li class="subnav">
+                            <button class="subnavbtn text-dark" asp-area="" asp-controller="Sags" asp-action="Index" >Sager</button>
+                            <sub class="subnav-content">
+                                <a asp-controller="Sags" asp-action="Index">Egne sager</a>
+                                <a asp-controller="Sags" asp-action="Index">Tilknyttede sager</a>
+                            </sub>
                         </li>
                     </ul>
                 </div>

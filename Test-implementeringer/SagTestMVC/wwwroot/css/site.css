@@ -2,9 +2,14 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  
+}
+
+.navbar>.container {
+    display: unset;
 }
 
 /* Provide sufficient contrast against white background */
@@ -86,24 +91,95 @@ body {
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
-        /* Links inside the dropdown */
+         /*Links inside the dropdown*/ 
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-            /* Change color of dropdown links on hover */
+             /*Change color of dropdown links on hover*/ 
             .dropdown-content a:hover {
                 background-color: #808080;
 
             }
-    /* Show the dropdown menu on hover */
+     /*Show the dropdown menu on hover*/ 
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    /* Change the background color of the dropdown button when the dropdown content is shown */
+     /*Change the background color of the dropdown button when the dropdown content is shown*/ 
     .dropdown:hover .dropbtn {
         background-color: #fff;
         text-decoration: none;
     }
+
+
+/*----SubNav menu ----*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #1861ac; 
+}
+
+ /*Navigation links*/ 
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    align-items: normal;
+
+}
+
+ /*The subnavigation menu*/ 
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+ /*Subnav button*/ 
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+ /*Add a red background color to navigation links on hover*/ 
+.navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #eee;
+}
+
+ /*Style the subnav content - positioned absolute*/ 
+.subnav-content {
+    display: none;
+    position: relative;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+}
+
+ /*Style the subnav links*/ 
+.subnav-content a {
+    float: left;
+    color: #808080;
+    text-decoration: none;
+}
+
+ /*Add a grey background color on hover*/ 
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+ /*When you move the mouse over the subnav container, open the subnav content*/
+.subnav:hover .subnav-content {
+    display: block;
+}
