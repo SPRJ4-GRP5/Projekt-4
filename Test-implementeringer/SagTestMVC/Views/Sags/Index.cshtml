@@ -1,0 +1,67 @@
+﻿@model SagViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table float-left">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.URLImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sager) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URLImage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="float-right">
+    <table class="table float-right">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.URLImage)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+    </table>
+</div>

@@ -1,6 +1,17 @@
-﻿@{
+﻿@model SagTest.Models.Sag
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
+@*<h1>Egne Sager</h1>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.DisplayFor(m => m.Subject)
+    }
+</body>*@
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

@@ -1,0 +1,60 @@
+﻿@model SagViewModel
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(model => model.CurrentSag.Subject)</h1>
+
+<div class="float-left">
+    <table class="table float-left">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CurrentSag.URLImage)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+    </table>
+</div>
+
+
+    <div class="float-right">
+
+        <h4>Sag</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CurrentSag.Text)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CurrentSag.Text)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CurrentSag.Subject)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CurrentSag.URLImage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CurrentSag.URLImage)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.CurrentSag.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+       
