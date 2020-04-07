@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Subject)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.URLImage)
+                @Html.DisplayNameFor(model => model.ImageFile)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Subject)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.URLImage)
+                @Html.DisplayFor(modelItem => item.ImageName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SubjectId">Edit</a> |

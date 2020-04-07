@@ -28,6 +28,7 @@ namespace SagTest
             services.AddControllersWithViews();
             services.AddDbContext<MyDBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MyDbContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +15,12 @@ namespace SagTest.Controllers
     public class SagsController : Controller
     {
         private readonly MyDBContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public SagsController(MyDBContext context)
+        public SagsController(MyDBContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         // GET: Sags
@@ -54,10 +58,20 @@ namespace SagTest.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SubjectId,Text,Subject,URLImage")] Sag sag)
+        public async Task<IActionResult> Create([Bind("SubjectId,Text,Subject,ImageFile")] Sag sag)
         {
             if (ModelState.IsValid)
             {
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(sag.ImageFile.FileName);
+                string extension = Path.GetExtension(sag.ImageFile.FileName);
+                sag.ImageName = fileName += extension;
+                string path = Path.Combine(wwwRootPath + "/Image/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await sag.ImageFile.CopyToAsync(fileStream);
+                }
+
                 _context.Add(sag);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

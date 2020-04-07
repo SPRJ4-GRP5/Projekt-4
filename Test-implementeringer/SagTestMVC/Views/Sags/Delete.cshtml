@@ -24,10 +24,10 @@
             @Html.DisplayFor(model => model.Subject)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.URLImage)
+           Uploaded Image
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.URLImage)
+            <img src="@("~/Image/"+Model.ImageName)" asp-append-version="true" width="250px" height="250px"/>
         </dd>
     </dl>
     

@@ -9,11 +9,6 @@ namespace SagTest.Data
 {
     public class MyDBContext : DbContext
     {
-        //protected override void OnConfiguring(DbContextOptionsBuilder ob)
-        //{
-        //    // For SQLServer file, this is
-        //    ob.UseSqlServer("Data Source=127.0.0.1,1433;Database=Sag;User ID=SA;Password=SecurePassword1!");
-        //}
 
         public MyDBContext(DbContextOptions<MyDBContext> options)
             : base(options)
@@ -22,10 +17,17 @@ namespace SagTest.Data
         }
 
         public DbSet<Sag> Sag { get; set; }
+        public DbSet<ImageModel> Images { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Sag>().HasKey(s => new { s.SubjectId });
+
+            mb.Entity<ImageModel>().HasKey(s => new { s.ImageId });
+            mb.Entity<ImageModel>()
+                .HasOne<Sag>(i => i.Sag)
+                .WithMany(s => s.imageModelsList)
+                .HasForeignKey(i => i.SagFKId);
 
         }
     }
