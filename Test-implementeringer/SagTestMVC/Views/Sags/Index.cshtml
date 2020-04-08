@@ -1,12 +1,67 @@
 ﻿@model SagViewModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>Egne sager</title>
+</head>
 
-<h1>Index</h1>
+<p class="title">Egne Sager
+        <button class="float-right">
+            <a asp-action="Create">Create New</a>
+        </button>
+</p>
 
-<p>
+<body>
+    <div class="container">
+        <div class="col-3 master">
+            <div class="master-item active-item">
+                Option 1
+            </div>
+            @foreach (var item in Model.Sager)
+            {
+                <div class="master-item" onclick="select(this)">
+                    @Html.DisplayFor(modelItem => item.Subject)
+                    @*<p> @Html.DisplayFor(modelItem => item.Text)</p>*@
+                </div>
+            }
+        </div>
+        <div class="col-9 detail" onclick="select(this)">
+            <h1 class="detail-title">@Html.DisplayFor(model => model.CurrentSag.Subject)</h1>
+            <div>
+                @Html.DisplayNameFor(model => model.CurrentSag.Subject):
+                <div>
+                    @Html.DisplayFor(model => model.CurrentSag.Subject)
+                </div>
+            </div>
+            <p>
+                @Html.DisplayNameFor(model => model.CurrentSag.Text):
+                @Html.DisplayFor(model => model.CurrentSag.Text)
+            </p>
+            <p>
+                <br />
+                @Html.DisplayNameFor(model => model.CurrentSag.URLImage):
+                @Html.DisplayFor(model => model.CurrentSag.URLImage)
+            </p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                                <a asp-action="Edit" asp-route-id="model.CurrentSag.Id">Edit</a>
+                                <a asp-action="Delete" asp-route-id="model.CurrentSag.Id">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+
+
+
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table float-left">
@@ -64,4 +119,4 @@
         </thead>
 
     </table>
-</div>
+</div>*@

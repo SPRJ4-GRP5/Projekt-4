@@ -1,4 +1,4 @@
-﻿@model SagTest.Models.Sag
+﻿@model SagViewModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -12,27 +12,27 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Text)
+            @Html.DisplayNameFor(model => model.CurrentSag.Text)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Text)
+            @Html.DisplayFor(model => model.CurrentSag.Text)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Subject)
+            @Html.DisplayNameFor(model => model.CurrentSag.Subject)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Subject)
+            @Html.DisplayFor(model => model.CurrentSag.Subject)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.URLImage)
+            @Html.DisplayNameFor(model => model.CurrentSag.URLImage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.URLImage)
+            @Html.DisplayFor(model => model.CurrentSag.URLImage)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CurrentSag.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

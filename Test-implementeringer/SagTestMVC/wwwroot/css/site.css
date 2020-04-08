@@ -185,3 +185,69 @@ body {
 .subnav:hover .subnav-content {
     display: block;
 }
+
+
+
+/*Master-detail*/
+.title {
+    font-size: 32px;
+    border-bottom: 2px solid #47eaf0;
+    padding: 15px;
+    color: #1b6ec2;
+}
+
+.master {
+    padding: 25px;
+    border-right: 3px solid #1b6ec2;
+    box-sizing: border-box;
+    height: 100vh; /*100%*/
+}
+
+.text-center{
+    text-align: center;
+}
+
+.master-item {
+    font-size: 24px;
+    border-bottom: 2px solid #47eaf0;
+    color: #1b6ec2;
+    padding: 15px;
+    background: white;
+}
+.master-item:hover, .active-item{
+    background: #1b6ec2;
+    color: white;
+    cursor: pointer;
+}
+.detail {
+    float: right;
+    padding: 25px;
+    box-sizing: border-box;
+    position: static;
+    color: #1b6ec2;
+    height: 100vh;
+    background-color: white;
+}
+
+.container{
+    position: relative;
+}
+
+[class*="col-"]{
+    width: 100%;
+    float: left;
+}
+
+.col-3{
+    width: 25%;
+}
+.col-9{
+    width: 70%;
+}
+
+/*Button*/
+button {
+    font-size: 20px;
+    background-color: white;
+    position: relative;
+}
