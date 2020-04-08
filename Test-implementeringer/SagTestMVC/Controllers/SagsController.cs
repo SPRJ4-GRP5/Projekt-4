@@ -26,7 +26,9 @@ namespace SagTest.Controllers
         // GET: Sags
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Sag.ToListAsync());
+            var vm = new SagViewModel();
+            vm.Sager = await _context.Sag.ToListAsync();
+            return View(vm);
         }
 
         // GET: Sags/Details/5

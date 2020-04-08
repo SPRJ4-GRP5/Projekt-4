@@ -1,6 +1,126 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.title {
+    font-size: 32px;
+    border-bottom: 2px solid #32cd32;
+    padding: 15px;
+    color: #32cd32
+}
+
+.master {
+    padding: 25px;
+    border: none;
+    box-sizing: border-box;
+    height: 100vh; 
+}
+
+/*.hidden-md {
+    display: inline;
+}*/
+
+/*.hidden-md-down {
+    display: none
+}*/
+
+.text-center {
+    text-align: center;
+}
+
+.master-item {
+    font-size: 24px;
+    border-bottom: 2px solid #32cd32;
+    padding: 15px;
+    background: white;
+    color: #32cd32;
+}
+.master-item:hover,
+.active-item {
+    background: #32cd32;
+    color: white;
+    cursor: pointer;
+}
+
+.detail {
+    float: right;
+    padding: 25px;
+    box-sizing: border-box;
+    position: static;
+    color: #4cd4b0;
+    height: 100vh;
+    background-color: white;
+}
+
+.container {
+    position: relative;
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+/*@media only screen and (min-width: 786px) {*/
+    /*.col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }*/
+
+    .col-3 {
+        width: 25%;
+    }
+
+    /*.col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }*/
+
+    .col-9 {
+        width: 70%;
+    }
+
+    /*.col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+    .hidden-md {
+        display: none;
+    }
+
+    .detail {
+        position: static;
+    }
+
+    .master {
+        border-right: 3px solid #32cd32;
+    }*/
+/*}*/
+
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -8,6 +128,17 @@ a.navbar-brand {
   
 }
 
+.container {
+    position: relative;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-9 {
+    width: 75%;
+}
 /*dette er en test */
 .navbar>.container {
     display: unset;
@@ -75,46 +206,6 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
-
-/*---Drop down menu---*/
-.dropdown {
-    
-}
-    .dropbtn {
-
-        color: black;
-        background-color: #fff;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-         /*Links inside the dropdown*/ 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-             /*Change color of dropdown links on hover*/ 
-            .dropdown-content a:hover {
-                background-color: #808080;
-
-            }
-     /*Show the dropdown menu on hover*/ 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-     /*Change the background color of the dropdown button when the dropdown content is shown*/ 
-    .dropdown:hover .dropbtn {
-        background-color: #fff;
-        text-decoration: none;
-    }
-
 
 /*----SubNav menu ----*/
 

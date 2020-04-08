@@ -1,47 +1,101 @@
-﻿@model IEnumerable<SagTest.Models.Sag>
+﻿@model SagViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<body>
+<h1 class="title text-center">Egne Sager</h1>
+<div class="container">
+    <p>
+        <a asp-action="Create">Opret Sag</a>
+    </p>
+    <div class="col-3 master">
+        @foreach (var item in Model.Sager)
+        {
+            <div class="master-item" onclick="select(this)">
+                @Html.DisplayFor(modelItem => item.Subject)
+                <a asp-action="Delete" asp-route-id="@item.SubjectId">Slet</a>
+            </div>
+        }
+    </div>
+    <div class="col-9 detail">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CurrentSag.Text)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CurrentSag.ImageFile)
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<script src="~/js/site.js"></script>
+</body>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+
+@*<div class="float-left">
+    <table class="table">
+        <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Text)
+                @Html.DisplayNameFor(model => model.CurrentSag.Text)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Subject)
+                @Html.DisplayNameFor(model => model.CurrentSag.Subject)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageFile)
+                @Html.DisplayNameFor(model => model.CurrentSag.ImageFile)
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Sager) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SubjectId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+<div class="float-right">
+    <table class="table float-right">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentSag.ImageName)
             </th>
             <th></th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SubjectId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        </thead>
+
+    </table>
+</div>*@
